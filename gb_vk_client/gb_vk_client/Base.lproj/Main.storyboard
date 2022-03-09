@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EKb-r9-nkh">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="666"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_vk_color_32" translatesAutoresizingMaskIntoConstraints="NO" id="Fwe-Ya-Lrf">
                                                 <rect key="frame" x="157" y="30" width="100" height="100"/>
@@ -59,7 +59,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y5s-1g-QqD">
-                                                <rect key="frame" x="147" y="592.5" width="120" height="40"/>
+                                                <rect key="frame" x="147" y="552.5" width="120" height="40"/>
                                                 <color key="backgroundColor" name="AccentColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="UQK-vn-sGr"/>
@@ -79,9 +79,8 @@
                                             <constraint firstAttribute="trailing" secondItem="FZy-nt-FMs" secondAttribute="trailing" constant="15" id="6F6-wd-1KQ"/>
                                             <constraint firstItem="5q4-ca-msO" firstAttribute="leading" secondItem="EKb-r9-nkh" secondAttribute="leading" constant="25" id="6LP-Z2-no1"/>
                                             <constraint firstItem="0Ay-rd-8h5" firstAttribute="leading" secondItem="EKb-r9-nkh" secondAttribute="leading" constant="15" id="7j8-Bg-e61"/>
-                                            <constraint firstItem="Y5s-1g-QqD" firstAttribute="top" secondItem="0Ay-rd-8h5" secondAttribute="bottom" constant="115" id="7nP-Nt-2Sb"/>
+                                            <constraint firstItem="Y5s-1g-QqD" firstAttribute="top" secondItem="0Ay-rd-8h5" secondAttribute="bottom" constant="75" id="7nP-Nt-2Sb"/>
                                             <constraint firstItem="0Ay-rd-8h5" firstAttribute="top" secondItem="pc9-nA-vFv" secondAttribute="bottom" constant="15" id="HDf-Wg-qCo"/>
-                                            <constraint firstAttribute="height" constant="666" id="NPe-Rz-hHZ"/>
                                             <constraint firstItem="FZy-nt-FMs" firstAttribute="top" secondItem="5q4-ca-msO" secondAttribute="bottom" constant="15" id="Nsi-Q7-Zss"/>
                                             <constraint firstItem="aFL-El-Xs5" firstAttribute="centerX" secondItem="EKb-r9-nkh" secondAttribute="centerX" id="PMe-zr-re1"/>
                                             <constraint firstItem="pc9-nA-vFv" firstAttribute="leading" secondItem="EKb-r9-nkh" secondAttribute="leading" constant="25" id="PRY-l7-rJB"/>
@@ -97,6 +96,7 @@
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="EKb-r9-nkh" firstAttribute="height" secondItem="sbm-fq-lNl" secondAttribute="height" id="M6M-fR-rvP"/>
                                     <constraint firstItem="EKb-r9-nkh" firstAttribute="width" secondItem="sbm-fq-lNl" secondAttribute="width" id="P1c-uL-RAZ"/>
                                     <constraint firstItem="EKb-r9-nkh" firstAttribute="leading" secondItem="bdM-gr-8VY" secondAttribute="leading" id="aTS-4z-KGQ"/>
                                     <constraint firstItem="EKb-r9-nkh" firstAttribute="top" secondItem="bdM-gr-8VY" secondAttribute="top" id="hNj-hR-JqH"/>
