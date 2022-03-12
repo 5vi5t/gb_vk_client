@@ -9,6 +9,8 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    let fromLoginToTabBarSegue = "fromLoginToTabBar"
+    
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -18,6 +20,7 @@ class LoginViewController: UIViewController {
               let password = passwordTextField.text else { return }
         if login == "admin" && password == "123456" {
             print("успешная авторизация")
+            performSegue(withIdentifier: fromLoginToTabBarSegue, sender: nil)
         } else {
             print("неуспешная авторизация")
         }
