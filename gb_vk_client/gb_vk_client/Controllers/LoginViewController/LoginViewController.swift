@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBAction func logInButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: fromLoginToTabBarSegue, sender: nil)
         guard let login = loginTextField.text,
               let password = passwordTextField.text else { return }
         if login == "admin" && password == "123456" {
