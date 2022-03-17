@@ -11,12 +11,6 @@ class FriendsController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var friendsArray = ["Пётр",
-                        "Марина",
-                        "Оксана",
-                        "Гюльчатай",
-                        "Владимир"]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self

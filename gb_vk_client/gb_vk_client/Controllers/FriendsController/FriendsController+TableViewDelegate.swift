@@ -13,6 +13,6 @@ extension FriendsController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(friendsArray[indexPath.row])
+        print(Storage.shared.friendsArray[indexPath.row])
     }
 }
