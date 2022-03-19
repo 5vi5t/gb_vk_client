@@ -51,9 +51,18 @@ class LoginViewController: UIViewController {
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         recognizer.cancelsTouchesInView = false
         self.scrollView.addGestureRecognizer(recognizer)
+        fillFriendsData()
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    func fillFriendsData() {
+        let friend1 = Friend(name: "Амогус", avatar: "amogus1", surName: "Красный", fotos: ["amogus1", "amogus2", "amogus3", "amogus4", "amogus5"])
+        let friend2 = Friend(name: "Джокер", avatar: "joker1", surName: "Добрый", fotos: ["joker1", "joker2", "joker3", "joker4", "joker5"])
+        
+        Storage.shared.friendsArray.append(friend1)
+        Storage.shared.friendsArray.append(friend2)
     }
 }

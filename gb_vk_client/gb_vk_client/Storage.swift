@@ -15,17 +15,9 @@ class Storage: NSObject {
         super.init()
     }
     
-    let friendsArray = [
-        "Петя",
-        "Вася",
-        "Фируза",
-        "Алина",
-        "Говнарь",
-        "Семён",
-        "Мороз"
-    ]
+    var friendsArray = [Friend]()
     
-    //1:37
+    
     
     
     

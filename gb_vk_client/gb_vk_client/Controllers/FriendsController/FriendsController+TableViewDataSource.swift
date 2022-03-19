@@ -9,13 +9,13 @@ import UIKit
 
 extension FriendsController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Storage.shared.friendsArray.count
+        return friendsArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierUniversalTableViewCell, for: indexPath) as? UniversalTableViewCell else { return UITableViewCell() }
         
-        cell.configure(image: nil, name: Storage.shared.friendsArray[indexPath.row], description: nil)
+        cell.configure(friend: friendsArray[indexPath.row])
         
         return cell
     }
