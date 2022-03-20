@@ -13,7 +13,7 @@ extension AllGroupsController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(allGroupsArray[indexPath.row])
+        print(allGroupsArray[indexPath.row].name)
         NotificationCenter.default.post(name: groupInGroupsPressedNotification, object: allGroupsArray[indexPath.row])
     }
 }

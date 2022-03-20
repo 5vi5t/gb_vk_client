@@ -11,6 +11,6 @@ import Foundation
 let heightForUniversalTableViewCell: CGFloat = 70
 let reuseIdentifierUniversalTableViewCell = "reuseIdentifierUniversalTableViewCell"
 let groupInGroupsPressedNotification = NSNotification.Name("groupInGroupsPressedNotification")
-let fromMyFriendsToGallerySegue = "fromMyFriendsToGallery"
+let SegueFromMyFriendsToGallery = "fromMyFriendsToGallery"
 let reuseIdentifierGalleryCell = "reuseIdentifierGalleryCell"
 

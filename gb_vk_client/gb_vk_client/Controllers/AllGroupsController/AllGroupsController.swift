@@ -11,11 +11,7 @@ class AllGroupsController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var allGroupsArray = ["Xcode",
-                        "Swift",
-                        "iOS",
-                        "Apple",
-                        "iPhone"]
+    var allGroupsArray = Storage.shared.allGroupsArray
     
     override func viewDidLoad() {
         super.viewDidLoad()

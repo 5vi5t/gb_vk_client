@@ -52,6 +52,7 @@ class LoginViewController: UIViewController {
         recognizer.cancelsTouchesInView = false
         self.scrollView.addGestureRecognizer(recognizer)
         fillFriendsData()
+        fillGroupsData()
     }
     
     deinit {
@@ -59,10 +60,20 @@ class LoginViewController: UIViewController {
     }
     
     func fillFriendsData() {
-        let friend1 = Friend(name: "Амогус", avatar: "amogus1", surName: "Красный", fotos: ["amogus1", "amogus2", "amogus3", "amogus4", "amogus5"])
-        let friend2 = Friend(name: "Джокер", avatar: "joker1", surName: "Добрый", fotos: ["joker1", "joker2", "joker3", "joker4", "joker5"])
+        let friend1 = Friend(name: "Амогус", avatar: "amogus1", surname: "Красный", fotos: ["amogus1", "amogus2", "amogus3", "amogus4", "amogus5"])
+        let friend2 = Friend(name: "Джокер", avatar: "joker1", surname: "Добрый", fotos: ["joker1", "joker2", "joker3", "joker4", "joker5"])
         
         Storage.shared.friendsArray.append(friend1)
         Storage.shared.friendsArray.append(friend2)
+    }
+    
+    func fillGroupsData() {
+        let group1 = Group(name: "Fantasy Books", avatar: "group1", description: nil)
+        let group2 = Group(name: "Magic Books", avatar: "group2", description: nil)
+        let group3 = Group(name: "Adventure Books", avatar: "group3", description: "Frigate")
+        
+        Storage.shared.allGroupsArray.append(group1)
+        Storage.shared.allGroupsArray.append(group2)
+        Storage.shared.allGroupsArray.append(group3)
     }
 }

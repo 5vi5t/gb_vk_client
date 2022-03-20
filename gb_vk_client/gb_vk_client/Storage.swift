@@ -17,7 +17,7 @@ class Storage: NSObject {
     
     var friendsArray = [Friend]()
     
-    
+    var allGroupsArray = [Group]()
     
     
     

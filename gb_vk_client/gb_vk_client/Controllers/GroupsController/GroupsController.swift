@@ -11,7 +11,7 @@ class GroupsController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var groupsArray = [String]()
+    var groupsArray = [Group]()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -26,21 +26,21 @@ class GroupsController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(addGroupFromGroups(_:)), name: groupInGroupsPressedNotification, object: nil)
     }
     
-    func isContained(item: String) -> Bool {
+    func isContained(group: Group) -> Bool {
         groupsArray.contains { (groupsItem) -> Bool in
-            groupsItem == item
+            groupsItem.name == group.name
         }
     }
     
     
     @objc func addGroupFromGroups(_ notification: Notification) {
-        guard let newGroup = notification.object as? String else { return }
+        guard let newGroup = notification.object as? Group else { return }
         
-        if isContained(item: newGroup) {
-            print("\(newGroup) is already added")
+        if isContained(group: newGroup) {
+            print("\(newGroup.name) is already added")
         } else {
             groupsArray.append(newGroup)
-            print("\(newGroup) was appended")
+            print("\(newGroup.name) was appended")
         }
     }
     

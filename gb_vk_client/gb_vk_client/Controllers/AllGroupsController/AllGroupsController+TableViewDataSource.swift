@@ -15,7 +15,7 @@ extension AllGroupsController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierUniversalTableViewCell, for: indexPath) as? UniversalTableViewCell else { return UITableViewCell() }
         
-        cell.configure(image: nil, name: allGroupsArray[indexPath.row], description: nil)
+        cell.configure(group: allGroupsArray[indexPath.row])
         
         return cell
     }

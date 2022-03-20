@@ -34,6 +34,7 @@
 		A4AE36C727D8EEE300EBCF16 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AE36C627D8EEE300EBCF16 /* LoginViewController.swift */; };
 		A4CFD85F27DE8151005A8FFA /* AllGroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CFD85E27DE8151005A8FFA /* AllGroupsController.swift */; };
 		A4CFD86227DE81EF005A8FFA /* AllGroupsController+TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CFD86127DE81EF005A8FFA /* AllGroupsController+TableViewDataSource.swift */; };
+		A4F0FA6F27E7914800468DF3 /* FotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F0FA6E27E7914800468DF3 /* FotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		A4AE36C627D8EEE300EBCF16 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A4CFD85E27DE8151005A8FFA /* AllGroupsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsController.swift; sourceTree = "<group>"; };
 		A4CFD86127DE81EF005A8FFA /* AllGroupsController+TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AllGroupsController+TableViewDataSource.swift"; sourceTree = "<group>"; };
+		A4F0FA6E27E7914800468DF3 /* FotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 		A4AB66C327DE5F7200FEA863 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A4F0FA6D27E7912000468DF3 /* FotoViewController */,
 				A4A2D95D27E67811007E041A /* GalleryController */,
 				A4CFD85827DE7D3F005A8FFA /* AllGroupsController */,
 				A4AB66BA27DE5BD200FEA863 /* FriendsController */,
@@ -200,6 +203,14 @@
 				A456E8D127DE82ED00640604 /* AllGroupsController+TableViewDelegate.swift */,
 			);
 			path = AllGroupsController;
+			sourceTree = "<group>";
+		};
+		A4F0FA6D27E7912000468DF3 /* FotoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A4F0FA6E27E7914800468DF3 /* FotoViewController.swift */,
+			);
+			path = FotoViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +301,7 @@
 				A456E8D827DE844B00640604 /* GroupsController+TableViewDelegate.swift in Sources */,
 				A4A2D95F27E6783A007E041A /* GalleryController.swift in Sources */,
 				A4AB66D527DE6B5800FEA863 /* Constants.swift in Sources */,
+				A4F0FA6F27E7914800468DF3 /* FotoViewController.swift in Sources */,
 				A4CFD86227DE81EF005A8FFA /* AllGroupsController+TableViewDataSource.swift in Sources */,
 				A4A2D96527E678C0007E041A /* GalleryCell.swift in Sources */,
 				A44B102527DE7766009C84A5 /* UniversalTableViewCell.swift in Sources */,

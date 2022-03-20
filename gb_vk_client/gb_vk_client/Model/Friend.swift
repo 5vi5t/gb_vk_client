@@ -8,6 +8,6 @@
 struct Friend {
     var name: String
     var avatar: String
-    var surName: String
+    var surname: String
     var fotos: [String]
 }

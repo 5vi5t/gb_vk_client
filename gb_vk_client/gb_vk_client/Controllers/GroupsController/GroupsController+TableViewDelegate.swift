@@ -13,7 +13,7 @@ extension GroupsController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(groupsArray[indexPath.row])
+        print(groupsArray[indexPath.row].name)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

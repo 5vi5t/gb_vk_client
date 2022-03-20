@@ -28,6 +28,12 @@ class UniversalTableViewCell: UITableViewCell {
     func configure(friend: Friend) {
         avatarImageView.image = UIImage(named: friend.avatar)
         nameLabel.text = friend.name
-        descriptionLabel.text = friend.surName
+        descriptionLabel.text = friend.surname
+    }
+    
+    func configure(group: Group) {
+        avatarImageView.image = UIImage(named: group.avatar)
+        nameLabel.text = group.name
+        descriptionLabel.text = group.description
     }
 }
