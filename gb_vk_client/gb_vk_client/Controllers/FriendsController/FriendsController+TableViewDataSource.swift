@@ -16,7 +16,19 @@ extension FriendsController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierUniversalTableViewCell, for: indexPath) as? UniversalTableViewCell else { return UITableViewCell() }
         
         cell.configure(friend: friendsArray[indexPath.row])
+        cell.configureSubviews()
         
         return cell
+    }
+    
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        var result = [String]()
+        for index in 0..<friendsArray.count {
+            if let firstElementOfName = friendsArray[index].name.first {
+                result.append(String(firstElementOfName))
+            }
+        }
+        
+        return result
     }
 }

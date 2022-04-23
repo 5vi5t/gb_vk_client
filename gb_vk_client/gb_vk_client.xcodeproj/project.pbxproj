@@ -34,6 +34,8 @@
 		A4AE36C727D8EEE300EBCF16 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AE36C627D8EEE300EBCF16 /* LoginViewController.swift */; };
 		A4CFD85F27DE8151005A8FFA /* AllGroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CFD85E27DE8151005A8FFA /* AllGroupsController.swift */; };
 		A4CFD86227DE81EF005A8FFA /* AllGroupsController+TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CFD86127DE81EF005A8FFA /* AllGroupsController+TableViewDataSource.swift */; };
+		A4D18F9D28145DBA0098C0AF /* LikeControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D18F9C28145DBA0098C0AF /* LikeControlView.swift */; };
+		A4D18FA028145DE30098C0AF /* LikeControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4D18F9F28145DE30098C0AF /* LikeControlView.xib */; };
 		A4F0FA6F27E7914800468DF3 /* FotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F0FA6E27E7914800468DF3 /* FotoViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,8 @@
 		A4AE36C627D8EEE300EBCF16 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A4CFD85E27DE8151005A8FFA /* AllGroupsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsController.swift; sourceTree = "<group>"; };
 		A4CFD86127DE81EF005A8FFA /* AllGroupsController+TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AllGroupsController+TableViewDataSource.swift"; sourceTree = "<group>"; };
+		A4D18F9C28145DBA0098C0AF /* LikeControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeControlView.swift; sourceTree = "<group>"; };
+		A4D18F9F28145DE30098C0AF /* LikeControlView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikeControlView.xib; sourceTree = "<group>"; };
 		A4F0FA6E27E7914800468DF3 /* FotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +115,7 @@
 				A469C72927CE787B008BBFE4 /* Assets.xcassets */,
 				A469C72B27CE787B008BBFE4 /* LaunchScreen.storyboard */,
 				A469C72E27CE787B008BBFE4 /* Info.plist */,
+				A4D18FA228145DFB0098C0AF /* LikeControlView */,
 			);
 			path = gb_vk_client;
 			sourceTree = "<group>";
@@ -205,6 +210,17 @@
 			path = AllGroupsController;
 			sourceTree = "<group>";
 		};
+		A4D18FA228145DFB0098C0AF /* LikeControlView */ = {
+			isa = PBXGroup;
+			children = (
+				A4D18F9C28145DBA0098C0AF /* LikeControlView.swift */,
+				A4D18F9F28145DE30098C0AF /* LikeControlView.xib */,
+			);
+			path = LikeControlView;
+			sourceTree = "<group>";
+			tabWidth = 4;
+			wrapsLines = 1;
+		};
 		A4F0FA6D27E7912000468DF3 /* FotoViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4A2D96627E678C0007E041A /* GalleryCell.xib in Resources */,
+				A4D18FA028145DE30098C0AF /* LikeControlView.xib in Resources */,
 				A469C72D27CE787B008BBFE4 /* LaunchScreen.storyboard in Resources */,
 				A469C72A27CE787B008BBFE4 /* Assets.xcassets in Resources */,
 				A469C72827CE7873008BBFE4 /* Main.storyboard in Resources */,
@@ -286,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4AE36C727D8EEE300EBCF16 /* LoginViewController.swift in Sources */,
+				A4D18F9D28145DBA0098C0AF /* LikeControlView.swift in Sources */,
 				A4A2D96927E67AEA007E041A /* GalleryController+CollectionDataSource.swift in Sources */,
 				A4A2D95B27E67011007E041A /* Group.swift in Sources */,
 				A4AB66C127DE5C1E00FEA863 /* FriendsController.swift in Sources */,

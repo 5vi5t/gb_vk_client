@@ -16,7 +16,7 @@ extension GalleryController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierGalleryCell, for: indexPath) as? GalleryCell else {
             return UICollectionViewCell()
         }
-        cell.configure(fotoPath: fotoArray[indexPath.item])
+        cell.configure(fotoPath: fotoArray[indexPath.item], likeCount: indexPath.item)
         return cell
     }
 }

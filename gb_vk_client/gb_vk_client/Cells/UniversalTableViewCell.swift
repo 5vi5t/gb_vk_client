@@ -8,7 +8,8 @@
 import UIKit
 
 class UniversalTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var shadowView: UIView!
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -20,9 +21,9 @@ class UniversalTableViewCell: UITableViewCell {
     }
     
     func configure(image: UIImage?, name: String?, description: String?) {
-            avatarImageView.image = image
-            nameLabel.text = name
-            descriptionLabel.text = description
+        avatarImageView.image = image
+        nameLabel.text = name
+        descriptionLabel.text = description
     }
     
     func configure(friend: Friend) {
@@ -35,5 +36,15 @@ class UniversalTableViewCell: UITableViewCell {
         avatarImageView.image = UIImage(named: group.avatar)
         nameLabel.text = group.name
         descriptionLabel.text = group.description
+    }
+    
+    func configureSubviews() {
+        layoutIfNeeded()
+        self.shadowView.layer.cornerRadius = shadowView.frame.height / 2
+        self.shadowView.layer.shadowRadius = 10
+        self.shadowView.layer.shadowColor = UIColor.black.cgColor
+        self.shadowView.layer.shadowOpacity = 0.7
+        
+        self.avatarImageView.layer.cornerRadius = avatarImageView.frame.width / 2
     }
 }

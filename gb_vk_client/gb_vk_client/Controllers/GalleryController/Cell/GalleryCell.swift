@@ -8,15 +8,41 @@
 import UIKit
 
 class GalleryCell: UICollectionViewCell {
-
+    
     
     @IBOutlet weak var fotoImageView: UIImageView!
+    @IBOutlet weak var likeCounterView: LikeControlView!
+    
+    var likeCount = 0
     
     override func prepareForReuse() {
         fotoImageView.image = nil
     }
     
-    func configure(fotoPath: String) {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        likeCounterView.delegate = self
+    }
+    
+    func configure(fotoPath: String, likeCount: Int) {
         fotoImageView.image = UIImage(named: fotoPath)
+        self.likeCount = likeCount
     }
 }
+
+extension GalleryCell: LikeControlViewProtocol {
+    func countIncrement(count: Int) {
+        print(count)
+    }
+    
+    func countDecrement(count: Int) {
+        print(count)
+    }
+    
+    func sourceCount() -> Int {
+        return self.likeCount
+    }
+}
+
+
+
