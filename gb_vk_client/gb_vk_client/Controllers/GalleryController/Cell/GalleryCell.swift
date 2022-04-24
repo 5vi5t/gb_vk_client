@@ -7,6 +7,12 @@
 
 import UIKit
 
+protocol GalleryCellProtocol: AnyObject {
+    func countIncrement(count: Int)
+    func countDecrement(count: Int)
+    func sourceCount() -> Int
+}
+
 class GalleryCell: UICollectionViewCell {
     
     
@@ -14,6 +20,8 @@ class GalleryCell: UICollectionViewCell {
     @IBOutlet weak var likeCounterView: LikeControlView!
     
     var likeCount = 0
+    
+    weak var delegate: GalleryCellProtocol?
     
     override func prepareForReuse() {
         fotoImageView.image = nil
@@ -27,21 +35,27 @@ class GalleryCell: UICollectionViewCell {
     func configure(fotoPath: String, likeCount: Int) {
         fotoImageView.image = UIImage(named: fotoPath)
         self.likeCount = likeCount
+        likeCounterView.configure(count: likeCount)
     }
 }
 
 extension GalleryCell: LikeControlViewProtocol {
     func countIncrement(count: Int) {
+        delegate?.countIncrement(count: count)
         print(count)
     }
     
     func countDecrement(count: Int) {
+        delegate?.countDecrement(count: count)
         print(count)
     }
     
-    func sourceCount() -> Int {
-        return self.likeCount
-    }
+//    func sourceCount() -> Int {
+//        if let count = delegate?.sourceCount() {
+//            self.likeCount = count
+//        }
+//        return self.likeCount
+//    }
 }
 
 

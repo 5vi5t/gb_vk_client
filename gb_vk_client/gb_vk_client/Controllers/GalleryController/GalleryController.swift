@@ -23,8 +23,18 @@ class GalleryController: UIViewController {
         super.viewDidAppear(animated)
         collectionView.reloadData()
     }
+}
+
+extension GalleryController: GalleryCellProtocol {
+    func countIncrement(count: Int) {
+        print(count)
+    }
     
+    func countDecrement(count: Int) {
+        print(count)
+    }
     
-    
-    
+    func sourceCount() -> Int {
+        return 100
+    }
 }

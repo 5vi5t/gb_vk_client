@@ -10,7 +10,7 @@ import UIKit
 protocol LikeControlViewProtocol: AnyObject {
     func countIncrement(count: Int)
     func countDecrement(count: Int)
-    func sourceCount() -> Int
+//    func sourceCount() -> Int
 }
 
 @IBDesignable class LikeControlView: UIView {
@@ -47,9 +47,15 @@ protocol LikeControlViewProtocol: AnyObject {
         self.view.frame = bounds
         self.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(self.view)
-        if let sourceCount = self.delegate?.sourceCount() {
-            self.likeCounter = sourceCount
-        }
+//        if let sourceCount = self.delegate?.sourceCount() {
+//            self.likeCounter = sourceCount
+//        }
+        countLabel.text = String(self.likeCounter)
+    }
+    
+    func configure(count: Int) {
+        self.likeCounter = count
+        countLabel.text = String(self.likeCounter)
     }
     
     @IBAction func pressHeartButton(_ sender: Any) {
@@ -70,7 +76,7 @@ protocol LikeControlViewProtocol: AnyObject {
             countLabel.textColor = .black
             self.delegate?.countDecrement(count: self.likeCounter)
         }
-        countLabel.text = String(likeCounter)
+        countLabel.text = String(self.likeCounter)
         isHeartEmpty = !isHeartEmpty
     }
     
