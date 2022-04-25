@@ -25,18 +25,3 @@ class FriendsController: UIViewController {
     }
 }
 
-extension FriendsController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchText.isEmpty {
-            friendsArray = sourceFriendsArray
-        } else {
-            friendsArray = sourceFriendsArray.filter({ sourceFriend in
-                sourceFriend.name.lowercased().contains(searchText.lowercased())
-            })
-        }
-        tableView.reloadData()
-    }
-}
-
-
-

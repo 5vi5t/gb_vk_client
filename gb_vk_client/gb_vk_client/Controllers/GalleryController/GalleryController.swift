@@ -25,16 +25,3 @@ class GalleryController: UIViewController {
     }
 }
 
-extension GalleryController: GalleryCellProtocol {
-    func countIncrement(count: Int) {
-        print(count)
-    }
-    
-    func countDecrement(count: Int) {
-        print(count)
-    }
-    
-    func sourceCount() -> Int {
-        return 100
-    }
-}

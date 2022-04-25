@@ -7,12 +7,6 @@
 
 import UIKit
 
-protocol LikeControlViewProtocol: AnyObject {
-    func countIncrement(count: Int)
-    func countDecrement(count: Int)
-//    func sourceCount() -> Int
-}
-
 @IBDesignable class LikeControlView: UIView {
     
     @IBOutlet weak var heartButton: UIButton!
@@ -20,10 +14,8 @@ protocol LikeControlViewProtocol: AnyObject {
     
     private var view: UIView!
     
-    weak var delegate: LikeControlViewProtocol?
-    
-    var likeCounter = 0
-    var isHeartEmpty = true
+    var likeCount = 0
+    var isLiked = true
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -47,37 +39,47 @@ protocol LikeControlViewProtocol: AnyObject {
         self.view.frame = bounds
         self.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(self.view)
-//        if let sourceCount = self.delegate?.sourceCount() {
-//            self.likeCounter = sourceCount
-//        }
-        countLabel.text = String(self.likeCounter)
     }
     
-    func configure(count: Int) {
-        self.likeCounter = count
-        countLabel.text = String(self.likeCounter)
+    func configure(likeCount: Int) {
+        self.likeCount = likeCount
+        countLabel.text = String(self.likeCount)
     }
     
     @IBAction func pressHeartButton(_ sender: Any) {
-        if isHeartEmpty {
-            self.likeCounter += 1
+        if isLiked {
+            self.likeCount += 1
+            UIView.transition(with: countLabel,
+                              duration: 1,
+                              options: .transitionFlipFromRight,
+                              animations: { [weak self] in
+                                guard let self = self else { return }
+                                self.countLabel.text = String(self.likeCount)
+                              },
+                              completion: nil)
             let config = UIImage.SymbolConfiguration(scale: .large)
             let image = UIImage(systemName: "heart.fill", withConfiguration: config)
             heartButton.setImage(image, for: .normal)
             heartButton.tintColor = .systemRed
             countLabel.textColor = .systemRed
-            self.delegate?.countIncrement(count: self.likeCounter)
         } else {
-            self.likeCounter -= 1
+            self.likeCount -= 1
+            UIView.transition(with: countLabel,
+                              duration: 1,
+                              options: .transitionFlipFromLeft,
+                              animations: { [weak self] in
+                                guard let self = self else { return }
+                                self.countLabel.text = String(self.likeCount)
+                              },
+                              completion: nil)
             let config = UIImage.SymbolConfiguration(scale: .large)
             let image = UIImage(systemName: "heart", withConfiguration: config)
             heartButton.setImage(image, for: .normal)
             heartButton.tintColor = .black
             countLabel.textColor = .black
-            self.delegate?.countDecrement(count: self.likeCounter)
         }
-        countLabel.text = String(self.likeCounter)
-        isHeartEmpty = !isHeartEmpty
+        countLabel.text = String(self.likeCount)
+        isLiked = !isLiked
     }
     
 

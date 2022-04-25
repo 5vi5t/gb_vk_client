@@ -24,11 +24,10 @@ extension FriendsController: UITableViewDataSource {
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         var result = [String]()
         for index in 0..<friendsArray.count {
-            if let firstElementOfName = friendsArray[index].name.first {
-                result.append(String(firstElementOfName))
+            if let firstCharOfName = friendsArray[index].name.first {
+                result.append(String(firstCharOfName))
             }
         }
-        
         return result
     }
 }
