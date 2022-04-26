@@ -19,9 +19,4 @@ extension FriendsController: UITableViewDelegate {
             destinationController.fotoArray = friend.fotos
         }
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(friendsArray[indexPath.row].name)
-        performSegue(withIdentifier: SegueFromMyFriendsToGallery, sender: friendsArray[indexPath.row])
-    }
 }

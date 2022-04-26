@@ -27,6 +27,15 @@
                             <constraint firstAttribute="width" secondItem="uYQ-bA-bCL" secondAttribute="height" multiplier="1:1" id="ekx-oj-DIa"/>
                         </constraints>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8oD-kM-Ufg">
+                        <rect key="frame" x="4" y="4" width="101" height="101"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <connections>
+                            <action selector="avatarButtonPressed:" destination="KGk-i7-Jjw" eventType="touchDown" id="MxB-ZJ-lEB"/>
+                            <action selector="avatarButtonReleased:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Zv1-WL-XUf"/>
+                        </connections>
+                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfg-jT-DVp">
                         <rect key="frame" x="113" y="33.5" width="305" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -39,13 +48,27 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IjT-Uq-Qmq">
+                        <rect key="frame" x="105" y="0.0" width="317" height="109"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <connections>
+                            <action selector="cellButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="wPi-Nn-c1i"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="uYQ-bA-bCL" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="0Qh-OP-MnA"/>
+                    <constraint firstItem="IjT-Uq-Qmq" firstAttribute="leading" secondItem="8oD-kM-Ufg" secondAttribute="trailing" id="0vb-uo-Qw7"/>
                     <constraint firstItem="EPp-6w-czd" firstAttribute="top" secondItem="uYQ-bA-bCL" secondAttribute="top" id="2XM-3d-mrB"/>
+                    <constraint firstItem="8oD-kM-Ufg" firstAttribute="leading" secondItem="uYQ-bA-bCL" secondAttribute="leading" id="3tF-4d-fRL"/>
                     <constraint firstItem="EPp-6w-czd" firstAttribute="leading" secondItem="uYQ-bA-bCL" secondAttribute="leading" id="AaV-5a-F75"/>
+                    <constraint firstItem="8oD-kM-Ufg" firstAttribute="top" secondItem="uYQ-bA-bCL" secondAttribute="top" id="CH1-U3-4qw"/>
+                    <constraint firstAttribute="trailing" secondItem="IjT-Uq-Qmq" secondAttribute="trailing" id="CQs-oR-ZFJ"/>
                     <constraint firstAttribute="centerY" secondItem="sfg-jT-DVp" secondAttribute="bottom" id="DMp-yU-tjS"/>
+                    <constraint firstAttribute="bottom" secondItem="IjT-Uq-Qmq" secondAttribute="bottom" id="FzM-5h-AJ7"/>
                     <constraint firstAttribute="trailing" secondItem="5kT-8M-ggV" secondAttribute="trailing" constant="4" id="Gg8-iy-qXr"/>
+                    <constraint firstItem="8oD-kM-Ufg" firstAttribute="bottom" secondItem="uYQ-bA-bCL" secondAttribute="bottom" id="I4o-fE-CmR"/>
                     <constraint firstAttribute="trailing" secondItem="sfg-jT-DVp" secondAttribute="trailing" constant="4" id="Lj9-Qa-cdb"/>
                     <constraint firstItem="EPp-6w-czd" firstAttribute="trailing" secondItem="uYQ-bA-bCL" secondAttribute="trailing" id="TrF-bV-7tP"/>
                     <constraint firstItem="uYQ-bA-bCL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="VMG-KU-MUp"/>
@@ -54,6 +77,8 @@
                     <constraint firstItem="uYQ-bA-bCL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="fIE-rg-aFR"/>
                     <constraint firstItem="EPp-6w-czd" firstAttribute="bottom" secondItem="uYQ-bA-bCL" secondAttribute="bottom" id="h16-8X-LWo"/>
                     <constraint firstItem="5kT-8M-ggV" firstAttribute="leading" secondItem="uYQ-bA-bCL" secondAttribute="trailing" constant="8" id="iTU-GB-1ue"/>
+                    <constraint firstItem="IjT-Uq-Qmq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="sw7-Zz-ddk"/>
+                    <constraint firstItem="8oD-kM-Ufg" firstAttribute="trailing" secondItem="uYQ-bA-bCL" secondAttribute="trailing" id="yoq-Ww-LJL"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

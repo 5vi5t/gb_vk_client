@@ -14,10 +14,13 @@ class UniversalTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    var completion: (() -> Void)?
+    
     override func prepareForReuse() {
         avatarImageView.image = nil
         nameLabel.text = nil
         descriptionLabel.text = nil
+        completion = nil
     }
     
     func configure(image: UIImage?, name: String?, description: String?) {
@@ -26,10 +29,11 @@ class UniversalTableViewCell: UITableViewCell {
         descriptionLabel.text = description
     }
     
-    func configure(friend: Friend) {
+    func configure(friend: Friend, completion: @escaping (() -> Void)) {
         avatarImageView.image = UIImage(named: friend.avatar)
         nameLabel.text = friend.name
         descriptionLabel.text = friend.surname
+        self.completion = completion
     }
     
     func configure(group: Group) {
@@ -47,4 +51,33 @@ class UniversalTableViewCell: UITableViewCell {
         
         self.avatarImageView.layer.cornerRadius = avatarImageView.frame.width / 2
     }
+    
+    @IBAction func avatarButtonPressed(_ sender: Any) {
+        UIView.animate(withDuration: 0.1,
+                       animations: { [weak self] in
+                        let scale = CGAffineTransform(scaleX: 0.8, y: 0.8)
+                        self?.shadowView.transform = scale
+                        self?.avatarImageView.transform = scale
+                       },
+                       completion: nil)
+    }
+    
+    @IBAction func avatarButtonReleased(_ sender: Any) {
+        UIView.animate(withDuration: 1,
+                       delay: 0,
+                       usingSpringWithDamping: 0.3,
+                       initialSpringVelocity: 0,
+                       options: [.beginFromCurrentState],
+                       animations: { [weak self] in
+                        let scale = CGAffineTransform(scaleX: 1, y: 1)
+                        self?.shadowView.transform = scale
+                        self?.avatarImageView.transform = scale
+                       },
+                       completion: nil)
+    }
+    
+    @IBAction func cellButtonPressed(_ sender: Any) {
+        self.completion?()
+    }
+    
 }
