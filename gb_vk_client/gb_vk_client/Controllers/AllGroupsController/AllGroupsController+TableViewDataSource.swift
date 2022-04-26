@@ -15,7 +15,9 @@ extension AllGroupsController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierUniversalTableViewCell, for: indexPath) as? UniversalTableViewCell else { return UITableViewCell() }
         
-        cell.configure(group: allGroupsArray[indexPath.row])
+        cell.configure(group: allGroupsArray[indexPath.row]) { [weak self] in
+            NotificationCenter.default.post(name: groupInGroupsPressedNotification, object: self?.allGroupsArray[indexPath.row])
+        }
         cell.configureSubviews()
         
         return cell

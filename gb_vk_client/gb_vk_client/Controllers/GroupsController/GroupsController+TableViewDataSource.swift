@@ -15,7 +15,7 @@ extension GroupsController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierUniversalTableViewCell, for: indexPath) as? UniversalTableViewCell else { return UITableViewCell() }
         
-        cell.configure(group: groupsArray[indexPath.row])
+        cell.configure(group: groupsArray[indexPath.row], completion: nil)
         cell.configureSubviews()
         
         return cell

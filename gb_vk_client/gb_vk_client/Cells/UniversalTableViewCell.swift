@@ -36,10 +36,11 @@ class UniversalTableViewCell: UITableViewCell {
         self.completion = completion
     }
     
-    func configure(group: Group) {
+    func configure(group: Group, completion: (() -> Void)?) {
         avatarImageView.image = UIImage(named: group.avatar)
         nameLabel.text = group.name
         descriptionLabel.text = group.description
+        self.completion = completion
     }
     
     func configureSubviews() {
