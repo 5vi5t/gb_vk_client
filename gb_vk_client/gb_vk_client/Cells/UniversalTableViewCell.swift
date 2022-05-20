@@ -54,7 +54,7 @@ class UniversalTableViewCell: UITableViewCell {
     }
     
     @IBAction func avatarButtonPressed(_ sender: Any) {
-        UIView.animate(withDuration: 0.1,
+        UIView.animate(withDuration: 0.2,
                        animations: { [weak self] in
                         let scale = CGAffineTransform(scaleX: 0.8, y: 0.8)
                         self?.shadowView.transform = scale
