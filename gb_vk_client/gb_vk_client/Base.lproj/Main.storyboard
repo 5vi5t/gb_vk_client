@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gu7-an-TCd">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -126,13 +126,49 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-262" y="-569"/>
+            <point key="canvasLocation" x="-1361" y="-569"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="wDV-iW-Gk1">
+            <objects>
+                <viewController id="gu7-an-TCd" customClass="WebViewController" customModule="gb_vk_client" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OCX-Ln-BRT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aNA-dD-7kl">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Jjl-tq-zCf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aNA-dD-7kl" firstAttribute="leading" secondItem="Jjl-tq-zCf" secondAttribute="leading" id="Dm5-hE-Hok"/>
+                            <constraint firstItem="aNA-dD-7kl" firstAttribute="top" secondItem="OCX-Ln-BRT" secondAttribute="top" id="cM3-MH-hak"/>
+                            <constraint firstAttribute="bottom" secondItem="aNA-dD-7kl" secondAttribute="bottom" id="dBo-2O-umi"/>
+                            <constraint firstItem="aNA-dD-7kl" firstAttribute="trailing" secondItem="Jjl-tq-zCf" secondAttribute="trailing" id="fZd-VM-nsz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="aNA-dD-7kl" id="dp7-pt-j81"/>
+                        <segue destination="JVd-aY-Qfn" kind="presentation" identifier="fromWebViewControllerToTabBarController" modalPresentationStyle="fullScreen" id="Mow-1B-9nT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Qj-8c-5pn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-181.15942028985509" y="-1033.2589285714284"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Udx-Fr-WjE">
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="JVd-aY-Qfn" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="5lg-Oc-K7S"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NNx-W2-L1K">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -271,32 +307,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7OH-28-hHr">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="144" width="414" height="669"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="RMz-3X-D4N">
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BNv-Q4-y5e"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="7OH-28-hHr" firstAttribute="leading" secondItem="BNv-Q4-y5e" secondAttribute="leading" id="2Vo-AT-s6d"/>
                             <constraint firstItem="BNv-Q4-y5e" firstAttribute="trailing" secondItem="7OH-28-hHr" secondAttribute="trailing" id="3Ja-ET-55l"/>
+                            <constraint firstItem="RMz-3X-D4N" firstAttribute="leading" secondItem="BNv-Q4-y5e" secondAttribute="leading" id="69A-Bd-75Q"/>
                             <constraint firstItem="BNv-Q4-y5e" firstAttribute="bottom" secondItem="7OH-28-hHr" secondAttribute="bottom" id="BPR-3o-HBb"/>
-                            <constraint firstItem="7OH-28-hHr" firstAttribute="top" secondItem="BNv-Q4-y5e" secondAttribute="top" id="nr4-Kh-ZIH"/>
+                            <constraint firstItem="RMz-3X-D4N" firstAttribute="trailing" secondItem="BNv-Q4-y5e" secondAttribute="trailing" id="dKX-WA-fAg"/>
+                            <constraint firstItem="7OH-28-hHr" firstAttribute="top" secondItem="RMz-3X-D4N" secondAttribute="bottom" id="nr4-Kh-ZIH"/>
+                            <constraint firstItem="RMz-3X-D4N" firstAttribute="top" secondItem="BNv-Q4-y5e" secondAttribute="top" id="ti0-7P-CuL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="All Groups" id="ZKG-Z0-e2h"/>
                     <connections>
+                        <outlet property="searchBar" destination="RMz-3X-D4N" id="ERb-gR-MJp"/>
                         <outlet property="tableView" destination="7OH-28-hHr" id="fr8-P6-fG4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iMu-0y-360" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4370" y="136"/>
+            <point key="canvasLocation" x="4369.5652173913049" y="135.9375"/>
         </scene>
         <!--Friends-->
         <scene sceneID="wiI-gD-vEj">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="e5w-g7-39E" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="e5w-g7-39E" customClass="CustomNavigationController" customModule="gb_vk_client" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Friends" image="person.3.fill" catalog="system" id="Mps-nW-kS2"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mGj-mr-nMp">
@@ -332,6 +376,9 @@
             <point key="canvasLocation" x="2167" y="136"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Mow-1B-9nT"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="filemenu.and.selection" catalog="system" width="128" height="93"/>
         <image name="logo_vk_color_32" width="32" height="32"/>

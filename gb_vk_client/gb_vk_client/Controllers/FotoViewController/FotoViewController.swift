@@ -29,6 +29,21 @@ class FotoViewController: UIViewController {
         initialSetup()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+//        mainImageView.isHidden = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+//        mainImageView.isHidden = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+//        mainImageView.isHidden = true
+    }
+    
     private func initialSetup() {
         let recognizer = UIPanGestureRecognizer(target: self, action: #selector(onPan(_:)))
         self.view.addGestureRecognizer(recognizer)

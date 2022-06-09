@@ -13,7 +13,7 @@ extension FriendsController: UITableViewDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == SegueFromMyFriendsToGallery,
+        if segue.identifier == segueFromMyFriendsToGallery,
            let destinationController = segue.destination as? GalleryController,
            let friend = sender as? Friend {
             destinationController.fotoArray = friend.fotos

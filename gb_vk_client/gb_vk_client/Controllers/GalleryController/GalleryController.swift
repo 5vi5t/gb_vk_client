@@ -13,15 +13,25 @@ class GalleryController: UIViewController {
     
     var fotoArray = [String]()
     
+    let vkService = VkService()
+    
     override func viewDidLoad() {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(UINib(nibName: "GalleryCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifierGalleryCell)
+        vkService.loadVkPhotos(userId: Session.shared.userId)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+//        collectionView.isHidden = true
+        collectionView.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        collectionView.reloadData()
+//        collectionView.isHidden = false
+//        print(#function)
     }
 }
 

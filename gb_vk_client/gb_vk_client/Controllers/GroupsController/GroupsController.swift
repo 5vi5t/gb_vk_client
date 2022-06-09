@@ -12,10 +12,11 @@ class GroupsController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var groupsArray = [Group]()
+    let vkService = VkService()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.reloadData()
+//        tableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -24,6 +25,7 @@ class GroupsController: UIViewController {
         tableView.delegate = self
         tableView.register(UINib(nibName: "UniversalTableViewCell", bundle: nil), forCellReuseIdentifier: reuseIdentifierUniversalTableViewCell)
         NotificationCenter.default.addObserver(self, selector: #selector(addGroupFromGroups(_:)), name: groupInGroupsPressedNotification, object: nil)
+        vkService.loadVkGroups(userId: Session.shared.userId)
     }
     
     func isContained(group: Group) -> Bool {
