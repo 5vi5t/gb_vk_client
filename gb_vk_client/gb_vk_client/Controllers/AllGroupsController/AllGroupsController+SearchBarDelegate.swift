@@ -9,11 +9,15 @@ import UIKit
 
 extension AllGroupsController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        vkService.searchVkGroups(searchText: searchText)
+        vkService.searchVkGroups(searchText: searchText) { [weak self] groups in
+            guard let self = self else { return }
+            self.allGroupsArray = groups
+            self.tableView.reloadData()
+        }
         if searchText.isEmpty {
-            allGroupsArray = sourseAllGroupsArray
+            allGroupsArray = []
         } else {
-            allGroupsArray = sourseAllGroupsArray.filter({ sourceGroup in
+            allGroupsArray = allGroupsArray.filter({ sourceGroup in
                 sourceGroup.name.lowercased().contains(searchText.lowercased())
             })
         }

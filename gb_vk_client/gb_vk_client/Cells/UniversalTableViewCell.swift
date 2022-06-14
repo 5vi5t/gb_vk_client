@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class UniversalTableViewCell: UITableViewCell {
     
@@ -29,18 +30,19 @@ class UniversalTableViewCell: UITableViewCell {
         descriptionLabel.text = description
     }
     
-    func configure(friend: Friend, completion: @escaping (() -> Void)) {
-        avatarImageView.image = UIImage(named: friend.avatar)
+    func configure(friend: User, completion: @escaping (() -> Void)) {
+        let imageUrl = URL(string: friend.avatar)
+        avatarImageView.kf.setImage(with: imageUrl)
         nameLabel.text = friend.name
         descriptionLabel.text = friend.surname
         self.completion = completion
     }
     
-    func configure(group: Group, completion: (() -> Void)?) {
-        avatarImageView.image = UIImage(named: group.avatar)
+    func configure(group: Group, completion: (() -> Void)? = nil) {
+        let imageUrl = URL(string: group.avatar)
+        avatarImageView.kf.setImage(with: imageUrl)
         nameLabel.text = group.name
-        descriptionLabel.text = group.description
-        self.completion = completion
+        descriptionLabel.text = nil
     }
     
     func configureSubviews() {

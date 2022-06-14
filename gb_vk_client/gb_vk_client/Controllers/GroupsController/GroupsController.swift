@@ -25,7 +25,11 @@ class GroupsController: UIViewController {
         tableView.delegate = self
         tableView.register(UINib(nibName: "UniversalTableViewCell", bundle: nil), forCellReuseIdentifier: reuseIdentifierUniversalTableViewCell)
         NotificationCenter.default.addObserver(self, selector: #selector(addGroupFromGroups(_:)), name: groupInGroupsPressedNotification, object: nil)
-        vkService.loadVkGroups(userId: Session.shared.userId)
+        vkService.loadVkGroups { [weak self] groups in
+            guard let self = self else { return }
+            self.groupsArray = groups
+            self.tableView.reloadData()
+        }
     }
     
     func isContained(group: Group) -> Bool {

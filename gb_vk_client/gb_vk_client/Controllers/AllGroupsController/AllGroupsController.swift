@@ -12,7 +12,6 @@ class AllGroupsController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var sourseAllGroupsArray = Storage.shared.allGroupsArray
     var allGroupsArray = [Group]()
 
     let vkService = VkService()
@@ -23,6 +22,5 @@ class AllGroupsController: UIViewController {
         tableView.delegate = self
         searchBar.delegate = self
         tableView.register(UINib(nibName: "UniversalTableViewCell", bundle: nil), forCellReuseIdentifier: reuseIdentifierUniversalTableViewCell)
-        allGroupsArray = sourseAllGroupsArray
     }
 }

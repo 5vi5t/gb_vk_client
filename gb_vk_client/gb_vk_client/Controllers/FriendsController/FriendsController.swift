@@ -12,8 +12,8 @@ class FriendsController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    let sourceFriendsArray = Storage.shared.friendsArray
-    var friendsArray = [Friend]()
+    var friendsArray = [User]()
+    var searchFriendsArray = [User]()
     let vkService = VkService()
     
     override func viewDidLoad() {
@@ -22,10 +22,14 @@ class FriendsController: UIViewController {
         tableView.delegate = self
         tableView.register(UINib(nibName: "UniversalTableViewCell", bundle: nil), forCellReuseIdentifier: reuseIdentifierUniversalTableViewCell)
         searchBar.delegate = self
-        friendsArray = sourceFriendsArray
 //        self.navigationController?.delegate = self
         print(Session.shared.token, Session.shared.userId)
-        vkService.loadVkFriends()
+        vkService.loadVkFriends { [weak self] friends in
+            guard let self = self else { return }
+            self.friendsArray = friends
+            self.searchFriendsArray = friends
+            self.tableView.reloadData()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
