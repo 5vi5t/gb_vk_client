@@ -14,8 +14,8 @@ import UIKit
     
     private var view: UIView!
     
-    var likeCount = 0
-    var isLiked = true
+    private var likeCount = 0
+    private var isLiked = true
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,13 +41,20 @@ import UIKit
         self.addSubview(self.view)
     }
     
-    func configure(likeCount: Int) {
-        self.likeCount = likeCount
+    func configure(likesData: Photo) {
+        self.likeCount = likesData.likes.likesCount
         countLabel.text = String(self.likeCount)
+        if likesData.likes.isLiked == 1 {
+            self.isLiked = true
+            like()
+        } else {
+            self.isLiked = false
+            dislike()
+        }
     }
     
     @IBAction func pressHeartButton(_ sender: Any) {
-        if isLiked {
+        if !isLiked {
             self.likeCount += 1
             UIView.transition(with: countLabel,
                               duration: 1,
@@ -57,11 +64,7 @@ import UIKit
                                 self.countLabel.text = String(self.likeCount)
                               },
                               completion: nil)
-            let config = UIImage.SymbolConfiguration(scale: .large)
-            let image = UIImage(systemName: "heart.fill", withConfiguration: config)
-            heartButton.setImage(image, for: .normal)
-            heartButton.tintColor = .systemRed
-            countLabel.textColor = .systemRed
+            like()
         } else {
             self.likeCount -= 1
             UIView.transition(with: countLabel,
@@ -72,15 +75,25 @@ import UIKit
                                 self.countLabel.text = String(self.likeCount)
                               },
                               completion: nil)
-            let config = UIImage.SymbolConfiguration(scale: .large)
-            let image = UIImage(systemName: "heart", withConfiguration: config)
-            heartButton.setImage(image, for: .normal)
-            heartButton.tintColor = .black
-            countLabel.textColor = .black
+            dislike()
         }
         countLabel.text = String(self.likeCount)
         isLiked = !isLiked
     }
     
-
+    private func like() {
+        let config = UIImage.SymbolConfiguration(scale: .large)
+        let image = UIImage(systemName: "heart.fill", withConfiguration: config)
+        heartButton.setImage(image, for: .normal)
+        heartButton.tintColor = .systemRed
+        countLabel.textColor = .systemRed
+    }
+    
+    private func dislike() {
+        let config = UIImage.SymbolConfiguration(scale: .large)
+        let image = UIImage(systemName: "heart", withConfiguration: config)
+        heartButton.setImage(image, for: .normal)
+        heartButton.tintColor = .black
+        countLabel.textColor = .black
+    }
 }

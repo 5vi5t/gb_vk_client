@@ -6,21 +6,28 @@
 //
 
 import UIKit
+import Kingfisher
 
 class FotoViewController: UIViewController {
     
-    private var fotos = [String]()
+    private var fotos = [Photo]()
     private var index = Int()
     private var mainImageView = UIImageView()
     private var sideImageView = UIImageView()
     private var animator = UIViewPropertyAnimator()
     private var isLeft = Bool()
     
-    func configure(fotos: [String], index: Int) {
+    func configure(fotos: [Photo], index: Int) {
         self.fotos = fotos
         self.index = index
         if self.fotos.count - 1 >= self.index {
-            mainImageView.image = UIImage(named: self.fotos[self.index])
+            for size in fotos[index].sizes {
+                if size.type == "z" {
+                    let url = URL(string: size.url)
+                    mainImageView.kf.setImage(with: url)
+                }
+            }
+            //            mainImageView.image = UIImage(named: self.fotos[self.index])
         }
     }
     
@@ -31,17 +38,17 @@ class FotoViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        mainImageView.isHidden = true
+        //        mainImageView.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        mainImageView.isHidden = false
+        //        mainImageView.isHidden = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-//        mainImageView.isHidden = true
+        //        mainImageView.isHidden = true
     }
     
     private func initialSetup() {
@@ -68,12 +75,25 @@ class FotoViewController: UIViewController {
         case .began:
             if isLeft {
                 if index + 1 <= fotos.count - 1 {
-                    sideImageView.image = UIImage(named: fotos[index + 1])
+                    for size in self.fotos[self.index + 1].sizes {
+                        if size.type == "z" {
+                            let url = URL(string: size.url)
+                            sideImageView.kf.setImage(with: url)
+                        }
+                    }
+                    
+                    //                    sideImageView.image = UIImage(named: fotos[index + 1])
                 }
                 sideImageView.transform = CGAffineTransform(translationX:  view.bounds.width, y: 0)
             } else {
                 if index - 1 >= 0 {
-                    sideImageView.image = UIImage(named: fotos[index - 1])
+                    for size in self.fotos[self.index - 1].sizes {
+                        if size.type == "z" {
+                            let url = URL(string: size.url)
+                            sideImageView.kf.setImage(with: url)
+                        }
+                    }
+                    //                    sideImageView.image = UIImage(named: fotos[index - 1])
                 }
                 sideImageView.transform = CGAffineTransform(translationX: -view.bounds.width, y: 0)
             }

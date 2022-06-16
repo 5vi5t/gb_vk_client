@@ -20,6 +20,11 @@ class WebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if !Session.shared.token.isEmpty,
+           Session.shared.userId != "" {
+            performSegue(withIdentifier: segueFromWebViewControllerToTabBarController, sender: nil)
+        }
+        
         vkAuthorization()
     }
     

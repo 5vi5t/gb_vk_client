@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class GalleryCell: UICollectionViewCell {
     
@@ -17,9 +18,14 @@ class GalleryCell: UICollectionViewCell {
         fotoImageView.image = nil
     }
     
-    func configure(fotoPath: String, likeCount: Int) {
-        fotoImageView.image = UIImage(named: fotoPath)
-        likeCounterView.configure(likeCount: likeCount)
+    func configure(fotoData: Photo) {
+        for size in fotoData.sizes {
+            if size.type == "z" {
+                let imageUrl = URL(string: size.url)
+                fotoImageView.kf.setImage(with: imageUrl)
+            }
+        }
+        likeCounterView.configure(likesData: fotoData)
     }
 }
 

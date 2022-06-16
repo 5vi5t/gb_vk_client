@@ -10,6 +10,7 @@
 		A4044087285657AF0099C097 /* Data+PrettyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4044086285657AF0099C097 /* Data+PrettyJSON.swift */; };
 		A404408F28565EC60099C097 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A404408E28565EC60099C097 /* Photo.swift */; };
 		A40F4196281732F100282382 /* FriendsController+SearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40F4195281732F100282382 /* FriendsController+SearchBarDelegate.swift */; };
+		A416E168285BB4A700CEDB35 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = A416E167285BB4A700CEDB35 /* SwiftKeychainWrapper */; };
 		A44B102527DE7766009C84A5 /* UniversalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44B102327DE7766009C84A5 /* UniversalTableViewCell.swift */; };
 		A44B102627DE7766009C84A5 /* UniversalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A44B102427DE7766009C84A5 /* UniversalTableViewCell.xib */; };
 		A45549DC2846886000C796BE /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45549DB2846886000C796BE /* CustomNavigationController.swift */; };
@@ -33,6 +34,8 @@
 		A47CAE9B28511494008F24FE /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CAE9A28511494008F24FE /* WebViewController.swift */; };
 		A47CAEA2285127F8008F24FE /* VkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CAEA1285127F8008F24FE /* VkService.swift */; };
 		A497405127E3C7A1003A48D0 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A497405027E3C7A1003A48D0 /* Storage.swift */; };
+		A49FBC94285917E000EEC67E /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = A49FBC93285917E000EEC67E /* Realm */; };
+		A49FBC96285917E000EEC67E /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A49FBC95285917E000EEC67E /* RealmSwift */; };
 		A4A2D95727E67005007E041A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A2D95627E67005007E041A /* User.swift */; };
 		A4A2D95B27E67011007E041A /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A2D95A27E67011007E041A /* Group.swift */; };
 		A4A2D95F27E6783A007E041A /* GalleryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A2D95E27E6783A007E041A /* GalleryController.swift */; };
@@ -110,6 +113,9 @@
 			files = (
 				A47B126B2856699600DAE1FD /* Kingfisher in Frameworks */,
 				A47B1267285663B300DAE1FD /* SwiftyJSON in Frameworks */,
+				A416E168285BB4A700CEDB35 /* SwiftKeychainWrapper in Frameworks */,
+				A49FBC94285917E000EEC67E /* Realm in Frameworks */,
+				A49FBC96285917E000EEC67E /* RealmSwift in Frameworks */,
 				A47CAE9628511382008F24FE /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,6 +364,9 @@
 				A47CAE9528511382008F24FE /* Alamofire */,
 				A47B1266285663B300DAE1FD /* SwiftyJSON */,
 				A47B126A2856699600DAE1FD /* Kingfisher */,
+				A49FBC93285917E000EEC67E /* Realm */,
+				A49FBC95285917E000EEC67E /* RealmSwift */,
+				A416E167285BB4A700CEDB35 /* SwiftKeychainWrapper */,
 			);
 			productName = gb_vk_client;
 			productReference = A469C71D27CE7873008BBFE4 /* gb_vk_client.app */;
@@ -390,6 +399,8 @@
 				A47CAE9428511382008F24FE /* XCRemoteSwiftPackageReference "Alamofire" */,
 				A47B1265285663B300DAE1FD /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				A47B12692856699600DAE1FD /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				A49FBC92285917E000EEC67E /* XCRemoteSwiftPackageReference "realm-swift" */,
+				A416E166285BB4A600CEDB35 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 			);
 			productRefGroup = A469C71E27CE7873008BBFE4 /* Products */;
 			projectDirPath = "";
@@ -661,33 +672,54 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A416E166285BB4A600CEDB35 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper.git";
+			requirement = {
+				kind = exactVersion;
+				version = 4.0.1;
+			};
+		};
 		A47B1265285663B300DAE1FD /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.1;
+				kind = exactVersion;
+				version = 5.0.1;
 			};
 		};
 		A47B12692856699600DAE1FD /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.2.3;
+				kind = exactVersion;
+				version = 7.2.3;
 			};
 		};
 		A47CAE9428511382008F24FE /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.6.1;
+				kind = exactVersion;
+				version = 5.6.1;
+			};
+		};
+		A49FBC92285917E000EEC67E /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 10.25.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A416E167285BB4A700CEDB35 /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A416E166285BB4A600CEDB35 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
+		};
 		A47B1266285663B300DAE1FD /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A47B1265285663B300DAE1FD /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
@@ -702,6 +734,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A47CAE9428511382008F24FE /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		A49FBC93285917E000EEC67E /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A49FBC92285917E000EEC67E /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		A49FBC95285917E000EEC67E /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A49FBC92285917E000EEC67E /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

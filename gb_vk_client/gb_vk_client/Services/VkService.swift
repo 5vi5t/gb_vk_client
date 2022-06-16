@@ -37,7 +37,7 @@ class VkService {
             guard let jsonData = response.data else { return }
             
             do {
-                let itemsData = try JSON(jsonData)["response"]["items"].rawData()
+                let itemsData = try JSON(jsonData)["response", "items"].rawData()
                 let friends = try JSONDecoder().decode([User].self, from: itemsData)
                 completion(friends)
             } catch {
@@ -46,7 +46,7 @@ class VkService {
         }
     }
     
-    func loadVkPhotos(userId: String) {
+    func loadVkPhotos(userId: String, completion: @escaping ([Photo]) -> Void) {
         
         let path = "/photos.getAll"
         let parameters: Parameters = [
@@ -58,8 +58,18 @@ class VkService {
         
         let url = baseUrl + path
         
-        AF.request(url, method: .get, parameters: parameters).responseJSON { response in
-            print(response.request)
+        AF.request(url, method: .get, parameters: parameters).responseDecodable(of: Photo.self) { response in
+//            print(response.request)
+            
+            guard let jsonData = response.data else { return }
+            
+            do {
+                let itemsData = try JSON(jsonData)["response"]["items"].rawData()
+                let fotos = try JSONDecoder().decode([Photo].self, from: itemsData)
+                completion(fotos)
+            } catch {
+                print(error)
+            }
         }
     }
     

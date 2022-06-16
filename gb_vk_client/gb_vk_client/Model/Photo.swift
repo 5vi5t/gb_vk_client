@@ -6,18 +6,29 @@
 //
 
 import Foundation
+//import RealmSwift
 
+class Photo: Codable {
+    let id: Int
+    let likes: Likes
+    let sizes: [Size]
+}
 
-struct Photo: Codable {
+class Likes: Codable {
     let likesCount: Int
-    let userLikes: Int
-    let url: String
-    
+    let isLiked: Int
+
     enum CodingKeys: String, CodingKey {
-        case url
         case likesCount = "count"
-        case userLikes = "user_likes"
+        case isLiked = "user_likes"
     }
+}
+
+class Size: Codable {
+    let height: Int
+    let url: String
+    let type: String
+    let width: Int
 }
 
 

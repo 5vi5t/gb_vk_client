@@ -11,7 +11,8 @@ class GalleryController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var fotoArray = [String]()
+    var fotoArray = [Photo]()
+    var id = Int()
     
     let vkService = VkService()
     
@@ -19,13 +20,17 @@ class GalleryController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(UINib(nibName: "GalleryCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifierGalleryCell)
-        vkService.loadVkPhotos(userId: Session.shared.userId)
+        vkService.loadVkPhotos(userId: String(id)) { [weak self] fotos in
+            guard let self = self else { return }
+            self.fotoArray = fotos
+            self.collectionView.reloadData()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 //        collectionView.isHidden = true
-        collectionView.reloadData()
+//        collectionView.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
