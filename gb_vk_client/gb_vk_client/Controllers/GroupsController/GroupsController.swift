@@ -12,11 +12,11 @@ class GroupsController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var groupsArray = [Group]()
-    let vkService = VkService()
+    let groupsApi = GroupsAPI()
+    let groupsDB = GroupsDB()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        tableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -25,9 +25,10 @@ class GroupsController: UIViewController {
         tableView.delegate = self
         tableView.register(UINib(nibName: "UniversalTableViewCell", bundle: nil), forCellReuseIdentifier: reuseIdentifierUniversalTableViewCell)
         NotificationCenter.default.addObserver(self, selector: #selector(addGroupFromGroups(_:)), name: groupInGroupsPressedNotification, object: nil)
-        vkService.loadVkGroups { [weak self] groups in
+        groupsApi.loadVkGroups { [weak self] groups in
             guard let self = self else { return }
-            self.groupsArray = groups
+            self.groupsDB.save(groups)
+            self.groupsArray = self.groupsDB.fetch()
             self.tableView.reloadData()
         }
     }

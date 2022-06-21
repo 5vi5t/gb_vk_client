@@ -19,11 +19,8 @@ class GalleryCell: UICollectionViewCell {
     }
     
     func configure(fotoData: Photo) {
-        for size in fotoData.sizes {
-            if size.type == "z" {
-                let imageUrl = URL(string: size.url)
-                fotoImageView.kf.setImage(with: imageUrl)
-            }
+        if let url = URL(string: fotoData.fotoUrl) {
+            fotoImageView.kf.setImage(with: url)
         }
         likeCounterView.configure(likesData: fotoData)
     }

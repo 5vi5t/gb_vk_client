@@ -42,9 +42,9 @@ import UIKit
     }
     
     func configure(likesData: Photo) {
-        self.likeCount = likesData.likes.likesCount
+        self.likeCount = likesData.likesCount
         countLabel.text = String(self.likeCount)
-        if likesData.likes.isLiked == 1 {
+        if likesData.isLiked == 1 {
             self.isLiked = true
             like()
         } else {

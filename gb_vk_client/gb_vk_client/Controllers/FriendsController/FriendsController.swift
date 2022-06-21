@@ -14,7 +14,8 @@ class FriendsController: UIViewController {
     
     var friendsArray = [User]()
     var searchFriendsArray = [User]()
-    let vkService = VkService()
+    let friendsApi = FriendsAPI()
+    let friendsDB = FriendsDB()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,26 +23,22 @@ class FriendsController: UIViewController {
         tableView.delegate = self
         tableView.register(UINib(nibName: "UniversalTableViewCell", bundle: nil), forCellReuseIdentifier: reuseIdentifierUniversalTableViewCell)
         searchBar.delegate = self
-//        self.navigationController?.delegate = self
         print(Session.shared.token, Session.shared.userId)
-        vkService.loadVkFriends { [weak self] friends in
+        friendsApi.loadVkFriends { [weak self] friends in
             guard let self = self else { return }
-            self.friendsArray = friends
-            self.searchFriendsArray = friends
+            self.friendsDB.save(friends)
+            self.friendsArray = self.friendsDB.fetch()
+            self.searchFriendsArray = self.friendsArray
             self.tableView.reloadData()
         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        tableView.isHidden = false
-//        searchBar.isHidden = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-//        tableView.isHidden = true
-//        searchBar.isHidden = true
     }
     
 }

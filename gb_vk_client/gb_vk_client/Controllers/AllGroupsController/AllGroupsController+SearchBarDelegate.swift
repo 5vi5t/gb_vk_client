@@ -9,7 +9,7 @@ import UIKit
 
 extension AllGroupsController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        vkService.searchVkGroups(searchText: searchText) { [weak self] groups in
+        groupsApi.searchVkGroups(searchText: searchText) { [weak self] groups in
             guard let self = self else { return }
             self.allGroupsArray = groups
             self.tableView.reloadData()

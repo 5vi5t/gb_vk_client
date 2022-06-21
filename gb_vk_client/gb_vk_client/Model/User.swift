@@ -8,11 +8,11 @@
 import Foundation
 import RealmSwift
 
-class User: Object, Codable {
-    @objc dynamic var name: String
-    @objc dynamic var surname: String
-    @objc dynamic var id: Int
-    @objc dynamic var avatar: String
+class User: Object, Decodable {
+    @objc dynamic var name = ""
+    @objc dynamic var surname = ""
+    @objc dynamic var id = 0
+    @objc dynamic var avatar = ""
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -21,6 +21,8 @@ class User: Object, Codable {
         case avatar = "photo_100"
     }
     
-    
+    override class func primaryKey() -> String? {
+        return "id"
+    }
     
 }

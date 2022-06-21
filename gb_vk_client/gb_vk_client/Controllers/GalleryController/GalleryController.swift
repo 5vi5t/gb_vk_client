@@ -14,29 +14,27 @@ class GalleryController: UIViewController {
     var fotoArray = [Photo]()
     var id = Int()
     
-    let vkService = VkService()
+    let photosApi = PhotosAPI()
+    let photosDB = PhotosDB()
     
     override func viewDidLoad() {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(UINib(nibName: "GalleryCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifierGalleryCell)
-        vkService.loadVkPhotos(userId: String(id)) { [weak self] fotos in
+        photosApi.loadVkPhotos(userId: String(id)) { [weak self] fotos in
             guard let self = self else { return }
-            self.fotoArray = fotos
+            self.photosDB.save(fotos)
+            self.fotoArray = self.photosDB.fetch()
             self.collectionView.reloadData()
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        collectionView.isHidden = true
-//        collectionView.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        collectionView.isHidden = false
-//        print(#function)
     }
 }
 

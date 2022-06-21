@@ -13,8 +13,8 @@ class AllGroupsController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     
     var allGroupsArray = [Group]()
-
-    let vkService = VkService()
+    
+    let groupsApi = GroupsAPI()
     
     override func viewDidLoad() {
         super.viewDidLoad()
