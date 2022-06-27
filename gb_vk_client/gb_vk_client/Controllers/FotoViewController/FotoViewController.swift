@@ -38,11 +38,13 @@ class FotoViewController: UIViewController {
         let recognizer = UIPanGestureRecognizer(target: self, action: #selector(onPan(_:)))
         self.view.addGestureRecognizer(recognizer)
         
-        let frame = CGRect(x: 0, y: self.view.bounds.height / 2 - self.view.bounds.width / 2, width: self.view.bounds.width, height: self.view.bounds.height)
+        let frame = CGRect(x: 0, y: self.view.bounds.height / 2 - self.view.bounds.width / 2, width: self.view.bounds.width, height: self.view.bounds.width)
         
         mainImageView.frame = frame
+        mainImageView.contentMode = .scaleAspectFill
         self.view.addSubview(mainImageView)
         sideImageView.frame = frame
+        sideImageView.contentMode = .scaleAspectFill
         self.view.addSubview(sideImageView)
         self.view.bringSubviewToFront(mainImageView)
     }

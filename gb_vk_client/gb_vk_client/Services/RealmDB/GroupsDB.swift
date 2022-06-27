@@ -8,15 +8,12 @@
 import Foundation
 import RealmSwift
 
-final class GroupsDB {
+final class GroupsDB: RealmDB {
     func save(_ groups: [Group]) {
         do {
             let realm = try Realm()
-//            print(realm.configuration.fileURL)
-            let oldData = realm.objects(Group.self)
             try realm.write {
-                realm.delete(oldData)
-                realm.add(groups)
+                realm.add(groups, update: .modified)
             }
         } catch {
             print(error)

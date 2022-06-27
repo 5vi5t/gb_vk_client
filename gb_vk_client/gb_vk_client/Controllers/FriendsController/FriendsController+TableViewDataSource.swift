@@ -9,14 +9,17 @@ import UIKit
 
 extension FriendsController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return friendsArray.count
+        guard let friends = friends else { return 0 }
+        print(friends.count)
+        return friends.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierUniversalTableViewCell, for: indexPath) as? UniversalTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierUniversalTableViewCell, for: indexPath) as? UniversalTableViewCell,
+              let friends = friends else { return UITableViewCell() }
         
-        cell.configure(friend: friendsArray[indexPath.row]) { [weak self] in
-            self?.performSegue(withIdentifier: segueFromMyFriendsToGallery, sender: self?.friendsArray[indexPath.row])
+        cell.configure(friend: friends[indexPath.row]) { [weak self] in
+            self?.performSegue(withIdentifier: segueFromMyFriendsToGallery, sender: self?.friends?[indexPath.row])
         }
         cell.configureSubviews()
         
@@ -25,9 +28,11 @@ extension FriendsController: UITableViewDataSource {
     
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         var result = [String]()
-        for index in 0..<friendsArray.count {
-            if let firstCharOfName = friendsArray[index].name.first {
-                result.append(String(firstCharOfName))
+        if let friends = friends {
+            for index in 0..<friends.count {
+                if let firstCharOfName = friends[index].name.first {
+                    result.append(String(firstCharOfName))
+                }
             }
         }
         return result

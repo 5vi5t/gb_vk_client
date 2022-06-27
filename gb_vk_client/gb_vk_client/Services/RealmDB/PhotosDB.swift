@@ -8,15 +8,12 @@
 import Foundation
 import RealmSwift
 
-final class PhotosDB {
+final class PhotosDB: RealmDB {
     func save(_ photos: [Photo]) {
         do {
             let realm = try Realm()
-//            print(realm.configuration.fileURL)
-            let oldData = realm.objects(Photo.self)
             try realm.write {
-                realm.delete(oldData)
-                realm.add(photos)
+                realm.add(photos, update: .modified)
             }
         } catch {
             print(error)

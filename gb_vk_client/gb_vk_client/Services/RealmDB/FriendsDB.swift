@@ -8,29 +8,26 @@
 import Foundation
 import RealmSwift
 
-final class FriendsDB {
+final class FriendsDB: RealmDB {
     func save(_ friends: [User]) {
         do {
             let realm = try Realm()
-//            print(realm.configuration.fileURL)
-            let oldData = realm.objects(User.self)
             try realm.write {
-                realm.delete(oldData)
-                realm.add(friends)
+                realm.add(friends, update: .modified)
             }
         } catch {
             print(error)
         }
     }
     
-    func fetch() -> [User] {
-        var friends = [User]()
+    func fetch() -> Results<User>? {
         do {
             let realm = try Realm()
-            friends = Array(realm.objects(User.self))
+            let friends = realm.objects(User.self)
+            return friends
         } catch {
             print(error)
+            return nil
         }
-        return friends
     }
 }

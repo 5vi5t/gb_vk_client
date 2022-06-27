@@ -61,6 +61,7 @@
 		A4D18F9D28145DBA0098C0AF /* LikeControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D18F9C28145DBA0098C0AF /* LikeControlView.swift */; };
 		A4D18FA028145DE30098C0AF /* LikeControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4D18F9F28145DE30098C0AF /* LikeControlView.xib */; };
 		A4F0FA6F27E7914800468DF3 /* FotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F0FA6E27E7914800468DF3 /* FotoViewController.swift */; };
+		A4FFF08F2864E36D00990E9C /* RealmDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FFF08E2864E36D00990E9C /* RealmDB.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +115,7 @@
 		A4D18F9C28145DBA0098C0AF /* LikeControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeControlView.swift; sourceTree = "<group>"; };
 		A4D18F9F28145DE30098C0AF /* LikeControlView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikeControlView.xib; sourceTree = "<group>"; };
 		A4F0FA6E27E7914800468DF3 /* FotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotoViewController.swift; sourceTree = "<group>"; };
+		A4FFF08E2864E36D00990E9C /* RealmDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDB.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,6 +340,7 @@
 		A4C64E6E285F96EF004EEFDC /* RealmDB */ = {
 			isa = PBXGroup;
 			children = (
+				A4FFF08E2864E36D00990E9C /* RealmDB.swift */,
 				A4C64E6F285F972E004EEFDC /* FriendsDB.swift */,
 				A4832FA92860DE6100D95083 /* GroupsDB.swift */,
 				A4832FAD2860DE6E00D95083 /* PhotosDB.swift */,
@@ -503,6 +506,7 @@
 				A44B102527DE7766009C84A5 /* UniversalTableViewCell.swift in Sources */,
 				A4A2D96C27E67EF3007E041A /* GalleryController+CollectionDelegateFlowLayout.swift in Sources */,
 				A497405127E3C7A1003A48D0 /* Storage.swift in Sources */,
+				A4FFF08F2864E36D00990E9C /* RealmDB.swift in Sources */,
 				A4A2D95727E67005007E041A /* User.swift in Sources */,
 				A4A70EB028526F210019FC49 /* AllGroupsController+SearchBarDelegate.swift in Sources */,
 			);
