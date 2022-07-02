@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import FirebaseCore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var config = Realm.Configuration()
         config.deleteRealmIfMigrationNeeded = true
         Realm.Configuration.defaultConfiguration = config
+        FirebaseApp.configure()
         return true
     }
 

@@ -24,5 +24,4 @@ class User: Object, Decodable {
     override class func primaryKey() -> String? {
         return "id"
     }
-    
 }

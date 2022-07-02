@@ -31,7 +31,9 @@ extension FriendsController: UITableViewDataSource {
         if let friends = friends {
             for index in 0..<friends.count {
                 if let firstCharOfName = friends[index].name.first {
-                    result.append(String(firstCharOfName))
+                    if !result.contains(String(firstCharOfName)) {
+                        result.append(String(firstCharOfName))
+                    }
                 }
             }
         }

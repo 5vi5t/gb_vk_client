@@ -8,6 +8,7 @@
 import UIKit
 
 extension AllGroupsController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return heightForUniversalTableViewCell
     }

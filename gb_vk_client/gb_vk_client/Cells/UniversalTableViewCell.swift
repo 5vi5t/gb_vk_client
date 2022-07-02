@@ -43,6 +43,7 @@ class UniversalTableViewCell: UITableViewCell {
         avatarImageView.kf.setImage(with: imageUrl)
         nameLabel.text = group.name
         descriptionLabel.text = nil
+        self.completion = completion
     }
     
     func configureSubviews() {

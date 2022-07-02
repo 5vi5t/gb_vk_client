@@ -21,4 +21,11 @@ class Group: Object, Decodable {
     override class func primaryKey() -> String? {
         return "id"
     }
+    
+    func toAnyObject() -> [String: Any] {
+        return [
+            "id": id,
+            "name": name
+        ]
+    }
 }

@@ -16,7 +16,9 @@ extension AllGroupsController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierUniversalTableViewCell, for: indexPath) as? UniversalTableViewCell else { return UITableViewCell() }
         
         cell.configure(group: allGroupsArray[indexPath.row]) { [weak self] in
-            NotificationCenter.default.post(name: groupInGroupsPressedNotification, object: self?.allGroupsArray[indexPath.row])
+            guard let self = self else { return }
+            NotificationCenter.default.post(name: groupInGroupsPressedNotification, object: self.allGroupsArray[indexPath.row])
+            self.addSelectedGroupToFirebaseDB(group: self.allGroupsArray[indexPath.row])
         }
         cell.configureSubviews()
         
