@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 class UniversalTableViewCell: UITableViewCell {
     
@@ -14,6 +13,8 @@ class UniversalTableViewCell: UITableViewCell {
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    
+    private let imageLoaderHelper = ImageLoaderHelper()
     
     var completion: (() -> Void)?
     
@@ -31,16 +32,18 @@ class UniversalTableViewCell: UITableViewCell {
     }
     
     func configure(friend: User, completion: @escaping (() -> Void)) {
-        let imageUrl = URL(string: friend.avatar)
-        avatarImageView.kf.setImage(with: imageUrl)
+        imageLoaderHelper.loadImage(url: friend.avatar) { [weak self] image in
+            self?.avatarImageView.image = image
+        }
         nameLabel.text = friend.name
         descriptionLabel.text = friend.surname
         self.completion = completion
     }
     
     func configure(group: Group, completion: (() -> Void)? = nil) {
-        let imageUrl = URL(string: group.avatar)
-        avatarImageView.kf.setImage(with: imageUrl)
+        imageLoaderHelper.loadImage(url: group.avatar) { [weak self] image in
+            self?.avatarImageView.image = image
+        }
         nameLabel.text = group.name
         descriptionLabel.text = nil
         self.completion = completion

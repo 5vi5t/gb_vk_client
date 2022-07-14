@@ -11,6 +11,7 @@
 		A404408F28565EC60099C097 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A404408E28565EC60099C097 /* Photo.swift */; };
 		A40F4196281732F100282382 /* FriendsController+SearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40F4195281732F100282382 /* FriendsController+SearchBarDelegate.swift */; };
 		A416E168285BB4A700CEDB35 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = A416E167285BB4A700CEDB35 /* SwiftKeychainWrapper */; };
+		A421B91B2873D5B800CB3A14 /* ImageLoaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A421B91A2873D5B800CB3A14 /* ImageLoaderService.swift */; };
 		A44B102527DE7766009C84A5 /* UniversalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44B102327DE7766009C84A5 /* UniversalTableViewCell.swift */; };
 		A44B102627DE7766009C84A5 /* UniversalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A44B102427DE7766009C84A5 /* UniversalTableViewCell.xib */; };
 		A45549DC2846886000C796BE /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45549DB2846886000C796BE /* CustomNavigationController.swift */; };
@@ -30,6 +31,8 @@
 		A469C72A27CE787B008BBFE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A469C72927CE787B008BBFE4 /* Assets.xcassets */; };
 		A469C72D27CE787B008BBFE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A469C72B27CE787B008BBFE4 /* LaunchScreen.storyboard */; };
 		A4733E17284D2D1C007253B5 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4733E16284D2D1C007253B5 /* Session.swift */; };
+		A4753EC32873DD7A0014B863 /* ImageLoaderHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4753EC22873DD7A0014B863 /* ImageLoaderHelper.swift */; };
+		A4753EC72873DE640014B863 /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4753EC62873DE640014B863 /* ImageCacheService.swift */; };
 		A47B1267285663B300DAE1FD /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = A47B1266285663B300DAE1FD /* SwiftyJSON */; };
 		A47B126B2856699600DAE1FD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A47B126A2856699600DAE1FD /* Kingfisher */; };
 		A47CAE9628511382008F24FE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A47CAE9528511382008F24FE /* Alamofire */; };
@@ -71,6 +74,7 @@
 		A4044086285657AF0099C097 /* Data+PrettyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+PrettyJSON.swift"; sourceTree = "<group>"; };
 		A404408E28565EC60099C097 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		A40F4195281732F100282382 /* FriendsController+SearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FriendsController+SearchBarDelegate.swift"; sourceTree = "<group>"; };
+		A421B91A2873D5B800CB3A14 /* ImageLoaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderService.swift; sourceTree = "<group>"; };
 		A44B102327DE7766009C84A5 /* UniversalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalTableViewCell.swift; sourceTree = "<group>"; };
 		A44B102427DE7766009C84A5 /* UniversalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UniversalTableViewCell.xib; sourceTree = "<group>"; };
 		A45549DB2846886000C796BE /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 		A469C72C27CE787B008BBFE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A469C72E27CE787B008BBFE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4733E16284D2D1C007253B5 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		A4753EC22873DD7A0014B863 /* ImageLoaderHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderHelper.swift; sourceTree = "<group>"; };
+		A4753EC62873DE640014B863 /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
 		A47CAE9A28511494008F24FE /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		A47CAEA1285127F8008F24FE /* VkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VkAPI.swift; sourceTree = "<group>"; };
 		A4832F9E2860DB5500D95083 /* FriendsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsAPI.swift; sourceTree = "<group>"; };
@@ -200,6 +206,9 @@
 		A45029982850FFB0004D37EA /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A421B91A2873D5B800CB3A14 /* ImageLoaderService.swift */,
+				A4753EC62873DE640014B863 /* ImageCacheService.swift */,
+				A4753EC22873DD7A0014B863 /* ImageLoaderHelper.swift */,
 				A4733E16284D2D1C007253B5 /* Session.swift */,
 				A4832F9D2860DADF00D95083 /* VkAPI */,
 				A4C64E6E285F96EF004EEFDC /* RealmDB */,
@@ -479,12 +488,15 @@
 			files = (
 				A4AE36C727D8EEE300EBCF16 /* LoginViewController.swift in Sources */,
 				A404408F28565EC60099C097 /* Photo.swift in Sources */,
+				A421B91B2873D5B800CB3A14 /* ImageLoaderService.swift in Sources */,
 				A47CAE9B28511494008F24FE /* WebViewController.swift in Sources */,
 				A4D18F9D28145DBA0098C0AF /* LikeControlView.swift in Sources */,
 				A4A2D96927E67AEA007E041A /* GalleryController+CollectionDataSource.swift in Sources */,
 				A45587E92846A5590031154B /* CustomInteractiveTransition.swift in Sources */,
 				A4A2D95B27E67011007E041A /* Group.swift in Sources */,
+				A4753EC72873DE640014B863 /* ImageCacheService.swift in Sources */,
 				A4AB66C127DE5C1E00FEA863 /* FriendsController.swift in Sources */,
+				A4753EC32873DD7A0014B863 /* ImageLoaderHelper.swift in Sources */,
 				A4AB66BD27DE5C0D00FEA863 /* GroupsController.swift in Sources */,
 				A4832FA72860DDF800D95083 /* PhotosAPI.swift in Sources */,
 				A4832FAE2860DE6E00D95083 /* PhotosDB.swift in Sources */,
