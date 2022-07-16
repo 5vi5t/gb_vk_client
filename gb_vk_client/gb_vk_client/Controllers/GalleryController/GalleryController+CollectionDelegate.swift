@@ -9,7 +9,6 @@ import UIKit
 
 extension GalleryController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.item)
         let fotoViewController = FotoViewController()
         fotoViewController.configure(fotos: fotoArray, index: indexPath.item)
         self.navigationController?.pushViewController(fotoViewController, animated: true)

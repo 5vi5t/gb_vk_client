@@ -24,7 +24,6 @@ final class PhotosAPI: VkAPI {
         let url = baseUrl + path
         
         AF.request(url, method: .get, parameters: parameters).responseDecodable(of: Photo.self) { response in
-//            print(response.request)
             
             guard let jsonData = response.data else { return }
             

@@ -25,6 +25,7 @@
 		A45950AA286B76CD002445D1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A45950A9286B76CD002445D1 /* GoogleService-Info.plist */; };
 		A45950AE286B78E0002445D1 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A45950AD286B78E0002445D1 /* FirebaseAuth */; };
 		A45950B0286B78E0002445D1 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A45950AF286B78E0002445D1 /* FirebaseDatabaseSwift */; };
+		A46138BE288071CA00DB30F9 /* NewsfeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46138BD288071CA00DB30F9 /* NewsfeedController.swift */; };
 		A469C72127CE7873008BBFE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A469C72027CE7873008BBFE4 /* AppDelegate.swift */; };
 		A469C72327CE7873008BBFE4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A469C72227CE7873008BBFE4 /* SceneDelegate.swift */; };
 		A469C72827CE7873008BBFE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A469C72627CE7873008BBFE4 /* Main.storyboard */; };
@@ -84,6 +85,7 @@
 		A456E8D427DE83EE00640604 /* GroupsController+TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupsController+TableViewDataSource.swift"; sourceTree = "<group>"; };
 		A456E8D727DE844B00640604 /* GroupsController+TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupsController+TableViewDelegate.swift"; sourceTree = "<group>"; };
 		A45950A9286B76CD002445D1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A46138BD288071CA00DB30F9 /* NewsfeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedController.swift; sourceTree = "<group>"; };
 		A469C71D27CE7873008BBFE4 /* gb_vk_client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gb_vk_client.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A469C72027CE7873008BBFE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A469C72227CE7873008BBFE4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -219,6 +221,32 @@
 			path = CustomNavigationController;
 			sourceTree = "<group>";
 		};
+		A46138BB2880719600DB30F9 /* NewsfeedController */ = {
+			isa = PBXGroup;
+			children = (
+				A46138BD288071CA00DB30F9 /* NewsfeedController.swift */,
+			);
+			path = NewsfeedController;
+			sourceTree = "<group>";
+		};
+		A46138C128833BB700DB30F9 /* UniversalTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A44B102327DE7766009C84A5 /* UniversalTableViewCell.swift */,
+				A44B102427DE7766009C84A5 /* UniversalTableViewCell.xib */,
+			);
+			path = UniversalTableViewCell;
+			sourceTree = "<group>";
+		};
+		A46138C328833BCA00DB30F9 /* GalleryCell */ = {
+			isa = PBXGroup;
+			children = (
+				A4A2D96327E678C0007E041A /* GalleryCell.swift */,
+				A4A2D96427E678C0007E041A /* GalleryCell.xib */,
+			);
+			path = GalleryCell;
+			sourceTree = "<group>";
+		};
 		A469C71427CE7873008BBFE4 = {
 			isa = PBXGroup;
 			children = (
@@ -317,6 +345,7 @@
 		A4AB66C327DE5F7200FEA863 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A46138BB2880719600DB30F9 /* NewsfeedController */,
 				A47CAE9928511464008F24FE /* WebViewControoler */,
 				A4AB66BA27DE5BD200FEA863 /* FriendsController */,
 				A4A2D95D27E67811007E041A /* GalleryController */,
@@ -331,10 +360,8 @@
 		A4AB66C727DE5FBE00FEA863 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				A44B102327DE7766009C84A5 /* UniversalTableViewCell.swift */,
-				A44B102427DE7766009C84A5 /* UniversalTableViewCell.xib */,
-				A4A2D96327E678C0007E041A /* GalleryCell.swift */,
-				A4A2D96427E678C0007E041A /* GalleryCell.xib */,
+				A46138C128833BB700DB30F9 /* UniversalTableViewCell */,
+				A46138C328833BCA00DB30F9 /* GalleryCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -500,6 +527,7 @@
 				A45549DC2846886000C796BE /* CustomNavigationController.swift in Sources */,
 				A4A2D96F27E67FF7007E041A /* GalleryController+CollectionDelegate.swift in Sources */,
 				A4CFD85F27DE8151005A8FFA /* AllGroupsController.swift in Sources */,
+				A46138BE288071CA00DB30F9 /* NewsfeedController.swift in Sources */,
 				A456E8D827DE844B00640604 /* GroupsController+TableViewDelegate.swift in Sources */,
 				A40F4196281732F100282382 /* FriendsController+SearchBarDelegate.swift in Sources */,
 				A4832F9F2860DB5500D95083 /* FriendsAPI.swift in Sources */,

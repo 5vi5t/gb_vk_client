@@ -24,7 +24,7 @@ class GalleryController: UIViewController {
         photosApi.loadVkPhotos(userId: String(id)) { [weak self] fotos in
             guard let self = self else { return }
             self.photosDB.save(fotos)
-            self.fotoArray = self.photosDB.fetch()
+          self.fotoArray = self.photosDB.fetch(id: self.id)
             self.collectionView.reloadData()
         }
     }

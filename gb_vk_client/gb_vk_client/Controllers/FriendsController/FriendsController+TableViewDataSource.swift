@@ -10,7 +10,6 @@ import UIKit
 extension FriendsController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let friends = friends else { return 0 }
-        print(friends.count)
         return friends.count
     }
     
@@ -19,7 +18,8 @@ extension FriendsController: UITableViewDataSource {
               let friends = friends else { return UITableViewCell() }
         
         cell.configure(friend: friends[indexPath.row]) { [weak self] in
-            self?.performSegue(withIdentifier: segueFromMyFriendsToGallery, sender: self?.friends?[indexPath.row])
+            self?.performSegue(withIdentifier: segueFromMyFriendsToGallery,
+                               sender: self?.friends?[indexPath.row])
         }
         cell.configureSubviews()
         

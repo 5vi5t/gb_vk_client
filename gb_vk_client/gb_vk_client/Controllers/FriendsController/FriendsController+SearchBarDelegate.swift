@@ -12,9 +12,7 @@ extension FriendsController: UISearchBarDelegate {
         if searchText.isEmpty {
             friends = searchFriends
         } else {
-//            friends = searchFriends.filter({ searchFriend in
-//                searchFriend.name.lowercased().contains(searchText.lowercased())
-//            })
+          friends = searchFriends?.filter("name CONTAINS[c] %@", searchText)
         }
         tableView.reloadData()
     }

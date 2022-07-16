@@ -20,11 +20,11 @@ final class PhotosDB: RealmDB {
         }
     }
     
-    func fetch() -> [Photo] {
+  func fetch(id: Int) -> [Photo] {
         var photos = [Photo]()
         do {
             let realm = try Realm()
-            photos = Array(realm.objects(Photo.self))
+          photos = Array(realm.objects(Photo.self).filter("ownerId == %d", id))
         } catch {
             print(error)
         }
