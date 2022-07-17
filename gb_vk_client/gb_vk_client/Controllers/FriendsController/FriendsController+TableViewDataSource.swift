@@ -18,8 +18,7 @@ extension FriendsController: UITableViewDataSource {
               let friends = friends else { return UITableViewCell() }
         
         cell.configure(friend: friends[indexPath.row]) { [weak self] in
-            self?.performSegue(withIdentifier: segueFromMyFriendsToGallery,
-                               sender: self?.friends?[indexPath.row])
+          self?.performSegue(withIdentifier: segueFromMyFriendsToGallery, sender: friends[indexPath.row])
         }
         cell.configureSubviews()
         

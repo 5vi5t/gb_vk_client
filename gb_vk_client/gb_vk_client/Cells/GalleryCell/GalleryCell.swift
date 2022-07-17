@@ -9,21 +9,23 @@ import UIKit
 import Kingfisher
 
 class GalleryCell: UICollectionViewCell {
-    
-    
-    @IBOutlet weak var fotoImageView: UIImageView!
-    @IBOutlet weak var likeCounterView: LikeControlView!
-    
-    override func prepareForReuse() {
-        fotoImageView.image = nil
+  
+  
+  @IBOutlet weak var fotoImageView: UIImageView!
+  @IBOutlet weak var likeCounterView: LikeControlView!
+  
+  private let imageLoaderHelper = ImageLoaderHelper()
+  
+  override func prepareForReuse() {
+    fotoImageView.image = nil
+  }
+  
+  func configure(fotoData: Photo) {
+    imageLoaderHelper.loadImage(url: fotoData.fotoUrl) { [weak self] image in
+      self?.fotoImageView.image = image
     }
-    
-    func configure(fotoData: Photo) {
-        if let url = URL(string: fotoData.fotoUrl) {
-            fotoImageView.kf.setImage(with: url)
-        }
-        likeCounterView.configure(likesData: fotoData)
-    }
+    likeCounterView.configure(likesData: fotoData)
+  }
 }
 
 

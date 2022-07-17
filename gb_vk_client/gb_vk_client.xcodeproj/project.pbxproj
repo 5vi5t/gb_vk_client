@@ -35,7 +35,6 @@
 		A4753EC32873DD7A0014B863 /* ImageLoaderHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4753EC22873DD7A0014B863 /* ImageLoaderHelper.swift */; };
 		A4753EC72873DE640014B863 /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4753EC62873DE640014B863 /* ImageCacheService.swift */; };
 		A47B1267285663B300DAE1FD /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = A47B1266285663B300DAE1FD /* SwiftyJSON */; };
-		A47B126B2856699600DAE1FD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A47B126A2856699600DAE1FD /* Kingfisher */; };
 		A47CAE9628511382008F24FE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A47CAE9528511382008F24FE /* Alamofire */; };
 		A47CAE9B28511494008F24FE /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CAE9A28511494008F24FE /* WebViewController.swift */; };
 		A47CAEA2285127F8008F24FE /* VkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CAEA1285127F8008F24FE /* VkAPI.swift */; };
@@ -132,7 +131,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A45950B0286B78E0002445D1 /* FirebaseDatabaseSwift in Frameworks */,
-				A47B126B2856699600DAE1FD /* Kingfisher in Frameworks */,
 				A47B1267285663B300DAE1FD /* SwiftyJSON in Frameworks */,
 				A416E168285BB4A700CEDB35 /* SwiftKeychainWrapper in Frameworks */,
 				A49FBC94285917E000EEC67E /* Realm in Frameworks */,
@@ -426,7 +424,6 @@
 			packageProductDependencies = (
 				A47CAE9528511382008F24FE /* Alamofire */,
 				A47B1266285663B300DAE1FD /* SwiftyJSON */,
-				A47B126A2856699600DAE1FD /* Kingfisher */,
 				A49FBC93285917E000EEC67E /* Realm */,
 				A49FBC95285917E000EEC67E /* RealmSwift */,
 				A416E167285BB4A700CEDB35 /* SwiftKeychainWrapper */,
@@ -463,7 +460,6 @@
 			packageReferences = (
 				A47CAE9428511382008F24FE /* XCRemoteSwiftPackageReference "Alamofire" */,
 				A47B1265285663B300DAE1FD /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
-				A47B12692856699600DAE1FD /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				A49FBC92285917E000EEC67E /* XCRemoteSwiftPackageReference "realm-swift" */,
 				A416E166285BB4A600CEDB35 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 				A45950AC286B78DF002445D1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
@@ -771,14 +767,6 @@
 				version = 5.0.1;
 			};
 		};
-		A47B12692856699600DAE1FD /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
-			requirement = {
-				kind = exactVersion;
-				version = 7.2.3;
-			};
-		};
 		A47CAE9428511382008F24FE /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -817,11 +805,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A47B1265285663B300DAE1FD /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
-		};
-		A47B126A2856699600DAE1FD /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A47B12692856699600DAE1FD /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
 		};
 		A47CAE9528511382008F24FE /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
