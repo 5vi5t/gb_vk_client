@@ -14,4 +14,7 @@ let groupInGroupsPressedNotification = NSNotification.Name("groupInGroupsPressed
 let segueFromMyFriendsToGallery = "fromMyFriendsToGallery"
 let reuseIdentifierGalleryCell = "reuseIdentifierGalleryCell"
 let segueFromWebViewControllerToTabBarController = "fromWebViewControllerToTabBarController"
-
+let reuseIdentifierHeaderNewsfeedCell = "reuseIdentifierHeaderNewsfeedCell"
+let reuseIdentifierTextNewsfeedCell = "reuseIdentifierTextNewsfeedCell"
+let reuseIdentifierPhotoNewsfeedCell = "reuseIdentifierPhotoNewsfeedCell"
+let reuseIdentifierFooterNewsfeedCell = "reuseIdentifierFooterNewsfeedCell"
